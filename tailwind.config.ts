@@ -8,12 +8,36 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
+            colors: {
+                brand: "#e11d48",
+                glass: "rgba(0, 0, 0, 0.2)"
+            },
+            gridTemplateColumns: {
+                "3": "repeat(3, max-content)",
+                "max-screen": "min(100%, 90rem)"
+            },
+            gridTemplateRows: {
+                "1": "min-content"
+            },
+            keyframes: {
+                simpleRender: {
+                    from: { opacity: "0" },
+                    to: { opacity: "100%" }
+                },
+                swingEffect: {
+                    "0%": { transform: "rotate(0deg)" },
+                    "25%": { transform: "rotate(8deg)" },
+                    "50%": { transform: "rotate(-8deg)" },
+                    "100%": { transform: "rotate(0deg)" }
+                }
+            },
+            animation: {
+                "simple-render": "simpleRender 0.75s ease-in-out",
+                "swing-effect": "swingEffect 0.5s ease-in-out"
             }
         }
     },
     plugins: []
 };
+
 export default config;
