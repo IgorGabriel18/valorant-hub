@@ -10,19 +10,17 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Valorant - Home",
+    title: "Valorant Hub - Home",
     description: "Valorant app"
 };
 
 export default function RootLayout({ children }: IChildren) {
     return (
         <html lang="en">
-            <body
-                className={`w-full h-min min-h-screen flex flex-col gap-y-12 justify-between bg-[url('../assets/images/background.png')] bg-cover ${inter.className}`}
-            >
+            <body className={`w-full h-screen min-h-min ${inter.className}`}>
                 <Providers>
                     <Navbar />
-                    <main className="w-full h-full pt-32 px-4 pb-4 flex flex-col gap-y-12 md:pt-40">{children}</main>
+                    <main className="w-full h-min flex flex-col gap-y-12">{children}</main>
                     <Footer />
                 </Providers>
             </body>

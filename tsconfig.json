@@ -23,6 +23,7 @@
             "~components/*": ["./src/components/*"],
             "~contexts/*": ["./src/contexts/*"],
             "~hooks/*": ["./src/hooks/*"],
+            "~services/*": ["./src/services/*"],
             "~styles/*": ["./src/styles/*"],
             "~types/*": ["./src/types/*"],
             "~utils/*": ["./src/utils/*"]

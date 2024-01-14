@@ -1,5 +1,5 @@
 "use client";
-import { X, List } from "@phosphor-icons/react";
+import { List, X } from "@phosphor-icons/react";
 
 import { Logo, Navigation } from "~components/common";
 import { useNavbar } from "~hooks/useNavbar";
@@ -9,7 +9,7 @@ export function Navbar() {
     const { renderMenuButton, renderNavigation, visibility, handleClickToggleVisibility } = useNavbar();
 
     return (
-        <header className="w-full h-min pt-10 px-4 pb-4 fixed inset-0 z-20 grid grid-cols-max-screen grid-rows-1 justify-center bg-glass">
+        <header className="w-full h-min pt-10 px-4 pb-4 fixed inset-0 z-20 grid grid-cols-max-screen grid-rows-1 justify-center bg-glass backdrop-blur-lg">
             <div className="w-full h-min flex flex-wrap gap-y-4 gap-x-12 justify-between items-center md:justify-around">
                 <Logo />
                 {render(
@@ -25,7 +25,13 @@ export function Navbar() {
                         )}
                     </button>
                 )}
-                {render(renderNavigation, <Navigation breakpoint="md" />)}
+                {render(
+                    renderNavigation,
+                    <Navigation
+                        layout="navbar"
+                        onClick={handleClickToggleVisibility}
+                    />
+                )}
             </div>
         </header>
     );
