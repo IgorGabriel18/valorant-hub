@@ -20,7 +20,9 @@ export default function RootLayout({ children }: IChildren) {
             <body className={`w-full h-screen min-h-min ${inter.className}`}>
                 <Providers>
                     <Navbar />
-                    <main className="w-full h-min flex flex-col gap-y-12">{children}</main>
+                    <main className="w-full h-min flex flex-col gap-y-12 bg-[url('../assets/images/background-2.png')] bg-center bg-cover">
+                        {children}
+                    </main>
                     <Footer />
                 </Providers>
             </body>

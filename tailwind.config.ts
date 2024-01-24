@@ -15,12 +15,17 @@ const config: Config = {
             },
             gridTemplateColumns: {
                 "1": "fit-content",
+                "2": "repeat(2, max-content)",
                 "3": "repeat(3, max-content)",
-                "max-screen": "min(100%, 90rem)"
+                "max-screen": "min(100%, 90rem)",
+                "responsive": "repeat(auto-fill, 20rem)"
             },
             gridTemplateRows: {
                 "1": "min-content",
-                "2": "repeat(2, min-content)"
+                "2": "repeat(2, min-content)",
+                "3": "repeat(3, min-content)",
+                "4": "repeat(4, min-content)",
+                "responsive": "repeat(auto-fill, minmax(0, min-content))"
             },
             keyframes: {
                 simpleRender: {

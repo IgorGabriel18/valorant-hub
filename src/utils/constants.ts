@@ -24,3 +24,5 @@ export const pageRef: { ref: string; title: string }[] = [
         title: "Weapons"
     }
 ];
+
+export const BASE_URL_API = "https://valorant-api.com/v1/";
