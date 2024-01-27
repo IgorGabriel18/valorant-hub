@@ -14,14 +14,6 @@ export const pageRef: { ref: string; title: string }[] = [
     {
         ref: "/agents",
         title: "Agents"
-    },
-    {
-        ref: "/maps",
-        title: "Maps"
-    },
-    {
-        ref: "/weapons",
-        title: "Weapons"
     }
 ];
 

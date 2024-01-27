@@ -10,8 +10,9 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Valorant Hub - Home",
-    description: "Valorant app"
+    title: "Valorant Hub",
+    description:
+        "Explore Valorant agents and discover detailed information about each agent to enhance your gaming strategies. The ultimate source to get to know Valorant heroes. Start now!"
 };
 
 export default function RootLayout({ children }: IChildren) {
