@@ -11,7 +11,7 @@ export function LinkValorant({ breakpoint, ...restAttributes }: ILinkValorantPro
             href="https://playvalorant.com/en-us/"
             target="_blank"
             {...restAttributes}
-            className={`w-fit h-min mx-auto block ${
+            className={`w-fit h-min mx-auto py-2 px-10 border-2 rounded-md block text-base font-medium text-slate-50 bg-glass backdrop-blur-lg ${
                 breakpoint === "md" ? "md:mx-0" : breakpoint === "sm" && "sm:mx-0"
             }`}
         >

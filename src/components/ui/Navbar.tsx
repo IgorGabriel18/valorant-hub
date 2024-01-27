@@ -10,18 +10,19 @@ export function Navbar() {
 
     return (
         <header className="w-full h-min pt-10 px-4 pb-4 fixed inset-0 z-20 grid grid-cols-max-screen grid-rows-1 justify-center bg-glass backdrop-blur-lg">
-            <div className="w-full h-min flex flex-wrap gap-y-4 gap-x-12 justify-between items-center md:justify-around">
+            <div className="w-full h-min flex flex-wrap gap-y-4 justify-between md:flex-none md:grid md:grid-cols-3fr md:grid-rows-1 md:justify-items-center md:items-center">
                 <Logo />
                 {render(
                     renderMenuButton,
                     <button
                         type="button"
                         onClick={handleClickToggleVisibility}
+                        className="w-max h-min block"
                     >
                         {render(
                             visibility,
-                            <X className="text-slate-50 text-4xl animate-simple-render" />,
-                            <List className="text-slate-50 text-4xl animate-simple-render" />
+                            <X className="text-slate-50 text-4xl animate-simple-render block" />,
+                            <List className="text-slate-50 text-4xl animate-simple-render block" />
                         )}
                     </button>
                 )}
