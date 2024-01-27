@@ -17,6 +17,8 @@ const config: Config = {
                 "1": "fit-content",
                 "2": "repeat(2, max-content)",
                 "3": "repeat(3, max-content)",
+                "agent-layout": "1.5fr 2fr",
+                "skill": "0.15fr 1fr",
                 "max-screen": "min(100%, 90rem)",
                 "responsive": "repeat(auto-fill, 20rem)"
             },

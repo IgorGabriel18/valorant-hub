@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { SectionContainer } from "~components/common";
+import { SectionContainer, SkillBox } from "~components/common";
 import { handleGetAgent } from "~services/getAgents";
 import { IParams } from "~types/global-types";
 
@@ -8,49 +8,40 @@ export default async function Agent({ params }: IParams) {
     const { data } = await handleGetAgent(params.uuid);
 
     return (
-        <SectionContainer heightFull>
-            <section className="w-11/12 h-min mx-auto p-6 rounded bg-main">
-                <figure className="w-full h-min grid grid-cols-1 grid-rows-2 gap-x-5 justify-center">
-                    <figcaption className="w-full h-min text-slate-50 text-2xl font-extrabold text-start">
-                        {data.displayName}
-                    </figcaption>
+        <>
+            <SectionContainer heightFull>
+                <section className="w-full h-min grid grid-cols-1 grid-rows-2 gap-10 items-center md:grid-cols-agent-layout md:grid-rows-1">
                     <Image
                         src={data.fullPortrait || ""}
                         alt={data.displayName}
-                        width={310}
+                        width={660}
                         height={420}
                     />
-                </figure>
-                <p className="w-full h-min text-slate-50 text-base text-center">{data.description}</p>
-                <div className="w-full h-min flex flex-wrap gap-4">
-                    <figure className="w-fit h-min grid grid-cols-1 grid-rows-2 gap-y-2 justify-items-center">
-                        <Image
-                            src={data.role.displayIcon || ""}
-                            alt={data.role.displayName}
-                            width={35}
-                            height={35}
+                    <div className="w-full h-min grid grid-cols-1 grid-rows-3 gap-6">
+                        <h1 className="text-4xl font-bold text-center text-slate-50 md:text-start">
+                            {data.displayName}
+                        </h1>
+                        <p className="text-base text-center text-slate-500 md:text-start">{data.description}</p>
+                        <SkillBox
+                            title="ROLE"
+                            skills={[data.role]}
                         />
-                        <figcaption>{data.role.displayName}</figcaption>
-                    </figure>
-                    <p>{data.role.description}</p>
-                </div>
-                <ul>
-                    {data.abilities.map(({ slot, displayIcon, displayName, description }) => (
-                        <li key={slot}>
-                            <figure>
-                                <Image
-                                    src={displayIcon || ""}
-                                    alt={displayName}
-                                    width={35}
-                                    height={35}
-                                />
-                                <figcaption>{displayName}</figcaption>
-                            </figure>
-                            <p>{description}</p>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-        </SectionContainer>
+                    </div>
+                </section>
+            </SectionContainer>
+            <div
+                className="w-10/12 max-w-7xl h-3 rounded-2xl"
+                style={{
+                    background: `linear-gradient(to right, #${data.backgroundGradientColors[0]}, #${data.backgroundGradientColors[1]}, #${data.backgroundGradientColors[2]}, #${data.backgroundGradientColors[3]})`
+                }}
+            />
+            <SectionContainer>
+                <SkillBox
+                    title="ABILITIES"
+                    skills={data.abilities}
+                    maxBox
+                />
+            </SectionContainer>
+        </>
     );
 }

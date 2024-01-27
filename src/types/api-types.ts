@@ -9,15 +9,13 @@ export interface IAgent {
     background: string;
     description: string;
     backgroundGradientColors: string[];
-    role: {
-        displayName: string;
-        displayIcon: string;
-        description: string;
-    };
-    abilities: {
-        slot: string;
-        displayName: string;
-        displayIcon: string;
-        description: string;
-    }[];
+    role: ISkill;
+    abilities: ISkill[];
+}
+
+export interface ISkill {
+    slot?: string;
+    displayName: string;
+    displayIcon: string;
+    description: string;
 }
