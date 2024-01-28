@@ -12,18 +12,19 @@ interface IScreenContext {
 export const ScreenContext = createContext({} as IScreenContext);
 
 export function ScreenContextProvider({ children }: IChildren) {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
 
     const handleScreenWidth = useCallback(() => {
         setScreenWidth(window.innerWidth);
     }, []);
 
     useEffect(() => {
-        setScreenWidth(window.innerWidth);
+        if (typeof window !== "undefined") {
+            setScreenWidth(window.innerWidth);
+            window.addEventListener("resize", handleScreenWidth);
 
-        window.addEventListener("resize", handleScreenWidth);
-
-        return () => window.removeEventListener("resize", handleScreenWidth);
+            return () => window.removeEventListener("resize", handleScreenWidth);
+        }
     }, [handleScreenWidth]);
 
     return <ScreenContext.Provider value={{ screenWidth, breakpoints }}>{children}</ScreenContext.Provider>;
