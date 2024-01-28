@@ -2,6 +2,10 @@
 
 Explore the universe of Valorant agents with Valorant Hub, a platform that delves deep into the stories, abilities, and statistics of each character in the game.
 
+## Objective for carrying out the project
+
+Understanding the entire structure and functioning of Next.js, with a focus on comprehending the system of routes, Server, and Client Components. Additionally, the application and functioning of Tailwind CSS style classes.
+
 ## Interface preview
 
 ![Preview 1](./public/assets/preview-1.png)
@@ -28,7 +32,7 @@ Explore the universe of Valorant agents with Valorant Hub, a platform that delve
 
 ## Deploy
 
--   [Access Valorant Hub](URL)
+-   [Access Valorant Hub](https://valorant-hub-ig.vercel.app/)
 
 ## How to Use
 
